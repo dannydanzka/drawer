@@ -14,7 +14,6 @@
         android:theme="@style/Theme.Drawer"
         tools:targetApi="31">
 
-        <!-- IngresoActivity como pantalla de inicio -->
         <activity
             android:name=".IngresoActivity"
             android:exported="true"
@@ -26,14 +25,12 @@
             </intent-filter>
         </activity>
 
-        <!-- MainActivity para el menú lateral -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Drawer.NoActionBar" />
 
-        <!-- AccesorioActivity para mostrar los detalles de accesorios -->
         <activity
             android:name=".AccesorioActivity"
             android:exported="true"

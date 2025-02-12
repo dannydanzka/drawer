@@ -11,9 +11,11 @@
 
         <TextView
             android:id="@+id/text_slideshow"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nosotros"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="8dp" />
     </LinearLayout>
 </ScrollView>

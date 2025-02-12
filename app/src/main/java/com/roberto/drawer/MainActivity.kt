@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -37,6 +38,10 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        val headerView = navView.getHeaderView(0)
+        val emailTextView: TextView = headerView.findViewById(R.id.textView)
+        emailTextView.text = "admin@motocicletas.com"
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -59,7 +64,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // Usa la extensión navigateUp() correctamente con appBarConfiguration
         return navController.navigateUp(appBarConfiguration)
     }
 }

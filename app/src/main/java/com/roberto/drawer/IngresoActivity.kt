@@ -2,38 +2,31 @@ package com.roberto.drawer
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.roberto.drawer.databinding.ActivityIngresoBinding
 
 class IngresoActivity : AppCompatActivity() {
 
-    private lateinit var email: EditText
-    private lateinit var password: EditText
-    private lateinit var btnLogin: Button
+    private lateinit var binding: ActivityIngresoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ingreso)
+        binding = ActivityIngresoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        email = findViewById(R.id.edtCorreo)
-        password = findViewById(R.id.edtContrasena)
-        btnLogin = findViewById(R.id.btnLogin)
+        binding.btnLogin.setOnClickListener {
+            val email = binding.edtCorreo.text.toString()
+            val pass = binding.edtContrasena.text.toString()
 
-        btnLogin.setOnClickListener {
-            if (validateCredentials(email.text.toString(), password.text.toString())) {
+            if (email == "admin@moto.com" && pass == "1234") {
+                Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                finish() // Cierra la actividad para que no se pueda volver atrás al login
+                finish()
             } else {
-                Toast.makeText(this, "Correo o contraseña incorrecto.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    private fun validateCredentials(email: String, password: String): Boolean {
-        // Cambiar "usr" y "12345" por las credenciales correctas
-        return email == "usr" && password == "12345"
     }
 }

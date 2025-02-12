@@ -14,37 +14,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Accesorios disponibles:"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/img_accesorio01"
+            android:id="@+id/imgAccesorio01"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="16dp"
             android:src="@drawable/moto2"
             android:contentDescription="Accesorio 1" />
 
         <ImageView
-            android:id="@+id/img_accesorio02"
+            android:id="@+id/imgAccesorio02"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="16dp"
             android:src="@drawable/moto3"
             android:contentDescription="Accesorio 2" />
 
         <ImageView
-            android:id="@+id/img_accesorio03"
+            android:id="@+id/imgAccesorio03"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="16dp"
             android:src="@drawable/moto4"
             android:contentDescription="Accesorio 3" />
 
         <ImageView
-            android:id="@+id/img_accesorio04"
+            android:id="@+id/imgAccesorio04"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="16dp"
             android:src="@drawable/moto5"
             android:contentDescription="Accesorio 4" />
     </LinearLayout>

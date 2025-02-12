@@ -11,12 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bienvenido a Motocicletas Correcaminos"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center" />
 
     <ImageView
         android:id="@+id/img_home"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/moto1"
-        android:contentDescription="Imagen de Motocicleta" />
+        android:contentDescription="Imagen de Motocicleta"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="16dp" />
 </LinearLayout>

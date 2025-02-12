@@ -28,43 +28,25 @@ class GalleryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val detalle = "Detalles de Accesorio"
-        var costo: String
-        var intent: Intent
 
-        binding.imgAccesorio01.setOnClickListener {
-            costo = "$600.00"
-            intent = Intent(activity, AccesorioActivity::class.java)
-            intent.putExtra("detalle", detalle)
-            intent.putExtra("costo", costo)
-            intent.putExtra("imagen", R.drawable.moto2)
-            startActivity(intent)
-        }
+        val accesorios = listOf(
+            binding.imgAccesorio01 to (R.drawable.moto2 to "$600.00"),
+            binding.imgAccesorio02 to (R.drawable.moto3 to "$175.00"),
+            binding.imgAccesorio03 to (R.drawable.moto4 to "$315.50"),
+            binding.imgAccesorio04 to (R.drawable.moto5 to "$2600.80")
+        )
 
-        binding.imgAccesorio02.setOnClickListener {
-            costo = "$175.00"
-            intent = Intent(activity, AccesorioActivity::class.java)
-            intent.putExtra("detalle", detalle)
-            intent.putExtra("costo", costo)
-            intent.putExtra("imagen", R.drawable.moto3)
-            startActivity(intent)
-        }
-
-        binding.imgAccesorio03.setOnClickListener {
-            costo = "$315.50"
-            intent = Intent(activity, AccesorioActivity::class.java)
-            intent.putExtra("detalle", detalle)
-            intent.putExtra("costo", costo)
-            intent.putExtra("imagen", R.drawable.moto4)
-            startActivity(intent)
-        }
-
-        binding.imgAccesorio04.setOnClickListener {
-            costo = "$2600.80"
-            intent = Intent(activity, AccesorioActivity::class.java)
-            intent.putExtra("detalle", detalle)
-            intent.putExtra("costo", costo)
-            intent.putExtra("imagen", R.drawable.moto5)
-            startActivity(intent)
+        accesorios.forEach { (imageView, data) ->
+            val (imagen, costo) = data
+            imageView.setOnClickListener {
+                Toast.makeText(requireContext(), "Abriendo detalles...", Toast.LENGTH_SHORT).show()
+                val intent = Intent(activity, AccesorioActivity::class.java).apply {
+                    putExtra("detalle", detalle)
+                    putExtra("costo", costo)
+                    putExtra("imagen", imagen)
+                }
+                startActivity(intent)
+            }
         }
     }
 

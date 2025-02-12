@@ -13,13 +13,15 @@
         android:layout_height="wrap_content"
         android:text="Descripción del producto:"
         android:textSize="18sp"
+        android:textStyle="bold"
         android:paddingBottom="16dp" />
 
     <ImageView
         android:id="@+id/imgAccesorioDetalle"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:contentDescription="Imagen del accesorio" />
+        android:contentDescription="Imagen del accesorio"
+        android:scaleType="centerCrop" />
 
     <Button
         android:id="@+id/btnRegresar"
